@@ -1,0 +1,15 @@
+export const users_emp_type = {
+  Admin: 'Admin',
+  HR: 'HR',
+  Marketing: 'Marketing',
+  Operation: 'Operation',
+  Accounts: 'Accounts',
+  QC: 'Quality Control',
+  TL: 'Team Lead',
+  Sales: 'Sales',
+  Writer: 'Writer',
+  BOE: 'Back Office Employee',
+  OH: 'Office Head',
+  Back_Office: 'Back Office',
+  Floor_Head: 'Floor Head',
+}
