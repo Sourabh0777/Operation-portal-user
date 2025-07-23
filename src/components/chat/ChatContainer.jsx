@@ -18,6 +18,7 @@ export function Chat() {
   const [chatInputs, setChatInputs] = useState({})
   const [socket, setSocket] = useState(null)
   const allChats = useSelector(getAllChats)
+  console.log('🚀 ~ Chat ~ allChats:', allChats)
   const dispatch = useDispatch()
   const currentUser = JSON.parse(localStorage.getItem('user_detail'))
 
@@ -47,37 +48,6 @@ export function Chat() {
       }
     }
   }, [])
-
-  // useEffect(() => {
-  //   if (socket) {
-  //     socket.on('receive_message', ({ chatId, senderId, message }) => {
-  //       if (senderId !== currentUser.id) {
-  //         dispatch(
-  //           addMessage({
-  //             chatId: chatId,
-  //             recipientId: senderId,
-  //             message: message,
-  //             timestamp: new Date().toISOString(),
-  //             isSenderMessage: false,
-  //           }),
-  //         )
-  //       }
-  //     })
-
-  //     socket.on('chat_history', (messages) => {
-  //       if (messages.length > 0) {
-  //         const chatId = messages[0].chatId
-  //         dispatch(loadHistoryMessages({ chatId, messages }))
-  //       }
-  //     })
-
-  //     return () => {
-  //       socket.off('receive_message')
-  //       socket.off('chat_history')
-  //     }
-  //   }
-  // }, [socket, dispatch])
-
   useEffect(() => {
     if (socket && currentUser) {
       allChats.forEach((chat) => {
