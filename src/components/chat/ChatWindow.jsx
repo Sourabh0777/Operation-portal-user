@@ -62,6 +62,7 @@ export const ChatWindow = ({
         senderId: currentUserId,
         recipientId: chat.recipientId,
         message: chatInput,
+        senderType: 'CLIENT',
       }
       socket.emit('private_message', messageData)
       dispatch(
