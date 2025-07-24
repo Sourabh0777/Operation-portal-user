@@ -52,7 +52,11 @@ export function Chat() {
     if (socket && currentUser) {
       allChats.forEach((chat) => {
         if (chat.chatOpenState && chat.messages.length === 0) {
-          socket.emit('fetch_chat_history', { chatId: chat.chatId, userId: currentUser.id })
+          socket.emit('fetch_chat_history', {
+            chatId: chat.chatId,
+            userId: currentUser.id,
+            userType: 'CLIENT',
+          })
         }
       })
     }

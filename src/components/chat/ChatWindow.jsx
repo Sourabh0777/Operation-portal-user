@@ -97,7 +97,7 @@ export const ChatWindow = ({
             {messages?.map((message, index) => (
               <div
                 key={`${message.timestamp}-${index}`}
-                className={`${styles.message} ${message.senderType == 'CLIENT' ? styles.userMessage : styles.botMessage}`}
+                className={`${styles.message} ${message.isSenderMessage ? styles.userMessage : styles.botMessage}`}
               >
                 <div className={styles.messageContent}>{message.message}</div>
                 <div className={styles.messageTime}>
